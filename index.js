@@ -15,20 +15,25 @@ boxAll.forEach(el => {
 let answer=boxAll[Math.floor(Math.random()*3)];
 let answerRGB = answer.style.backgroundColor;
 document.querySelector('.rgbQ').textContent = answerRGB;
-
 let scoreBoard=0;
 
 for(let item of boxAll){
+
   item.addEventListener("click",function(event){
     if(this.style.backgroundColor===answerRGB){
     scoreBoard+=1;
     document.querySelector('.score').textContent=scoreBoard;
-    
   }
     else{
     scoreBoard=0;
     document.querySelector('.score').textContent=scoreBoard;
     }
+    boxAll.forEach(el => {
+      el.style.backgroundColor = randomColor();
+    });
+    answer=boxAll[Math.floor(Math.random()*3)];
+    answerRGB=answer.style.backgroundColor;
+    document.querySelector('.rgbQ').textContent = answerRGB;
   });
 }
 
