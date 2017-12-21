@@ -38,4 +38,3 @@ for(let item of boxAll){
 }
 
 
-
