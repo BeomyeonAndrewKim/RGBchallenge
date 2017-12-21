@@ -18,18 +18,18 @@ function nextStage(){
   correctAnswer =Math.floor(Math.random()*3);
 }
 
+function init(){
+  stage=0;
+  problem=[randomColor(),randomColor(),randomColor()];
+  correctAnswer =Math.floor(Math.random()*3);
+}
+
 function draw(){
   document.querySelectorAll('.box').forEach((el,index) =>{
     el.style.backgroundColor=problem[index];
   })
   document.querySelector('.rgb-text').textContent = problem[correctAnswer];
   document.querySelector('.score').textContent = stage;
-}
-
-function init(){
-  stage=0;
-  problem=[randomColor(),randomColor(),randomColor()];
-  correctAnswer =Math.floor(Math.random()*3);
 }
 
 boxAll.forEach((el,index) => {
