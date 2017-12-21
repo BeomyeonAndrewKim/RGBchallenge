@@ -8,34 +8,40 @@ function randomColor() {
   return `rgb(${random255()},${random255()},${random255()})`;
 }
 
-boxAll.forEach(el => {
-  el.style.backgroundColor = randomColor();
-})
+let stage;
+let problem;
+let correctAnswer;
 
-let answer=boxAll[Math.floor(Math.random()*3)];
-let answerRGB = answer.style.backgroundColor;
-document.querySelector('.rgbQ').textContent = answerRGB;
-let scoreBoard=0;
-
-for(let item of boxAll){
-
-  item.addEventListener("click",function(event){
-    if(this.style.backgroundColor===answerRGB){
-    scoreBoard+=1;
-    document.querySelector('.score').textContent=scoreBoard;
-  }
-    else{
-    scoreBoard=0;
-    document.querySelector('.score').textContent=scoreBoard;
-    }
-    boxAll.forEach(el => {
-      el.style.backgroundColor = randomColor();
-    });
-    answer=boxAll[Math.floor(Math.random()*3)];
-    answerRGB=answer.style.backgroundColor;
-    document.querySelector('.rgbQ').textContent = answerRGB;
-  });
+function nextStage(){
+  stage++;
+  problem=[randomColor(),randomColor(),randomColor()];
+  correctAnswer =Math.floor(Math.random()*3);
 }
 
+function draw(){
+  document.querySelectorAll('.box').forEach((el,index) =>{
+    el.style.backgroundColor=problem[index];
+  })
+  document.querySelector('.rgb-text').textContent = problem[correctAnswer];
+  document.querySelector('.score').textContent = stage;
+}
 
+function init(){
+  stage=0;
+  problem=[randomColor(),randomColor(),randomColor()];
+  correctAnswer =Math.floor(Math.random()*3);
+}
 
+boxAll.forEach((el,index) => {
+    el.addEventListener('click', e => {
+      if(index===correctAnswer){
+        nextStage();
+        draw();
+      } else{
+        init();
+        draw();
+      }
+    })
+})
+init();
+draw();
