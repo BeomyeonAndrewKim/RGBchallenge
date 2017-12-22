@@ -32,19 +32,7 @@ function draw() {
     document.querySelector('.score').textContent = stage;
 }
 
-
-// boxAll.forEach((el, index) => {
-//     el.addEventListener('click', e => {
-//         el.classList.add('show');
-//         if (index === correctAnswer) {
-//             document.querySelector('.correct').classList.add('show');
-//         } else {
-//             document.querySelector('.wrong').classList.add('show');
-//             document.querySelector('.modal-score span').textContent = stage;
-//         }
-//     })
-// });
-
+// 나의 코드
 // document.querySelectorAll('.modal-button').forEach((el) => {
 //     el.addEventListener('click', e => {
 //         if (el === document.querySelector('.correct button')) {
