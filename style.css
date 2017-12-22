@@ -1,18 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    margin: 0;
+    background: #5381B0;
+}
+
+.top h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 19px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 135px;
+    padding: 20px 0;
+}
+
+.top span {
+    font-size: 52px;
+    line-height: 57px
+}
+
+.bottom {
+    flex-grow: 1;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom p {
+    text-align: center;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.game-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rgb-text {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 26px;
+    line-height: 39px;
+}
+
+.boxes {
+    display: flex;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
 
 .box {
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.65s ease;
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
+.box.show {
+    transform: scale(46);
 }
-.wrap{
-  height: 100%;
-  display:flex;
-  flex-direction: column;
-  
+
+.box:last-child {
+    margin-right: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-button {
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    padding: 10px;
 }
