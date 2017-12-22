@@ -23,6 +23,8 @@ for(let item of boxAll){
     if(this.style.backgroundColor===answerRGB){
     scoreBoard+=1;
     document.querySelector('.score').textContent=scoreBoard;
+    document.querySelector('.answer').style.display='block';
+    document.querySelector('.answer').style.transition='all 2s';
   }
     else{
     scoreBoard=0;

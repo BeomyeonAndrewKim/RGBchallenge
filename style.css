@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 /* CSS Reset */
 *, *::before, *::after {
@@ -28,10 +29,15 @@ body {
   font-size: 17px;
   padding: 20px 0;
   font-weight: 100;
+  text-transform: uppercase;
 }
 .mainTitle span{
   font-size: 50px;
-  line-height: 54px;
+  line-height: 56px;
+}
+main{
+height: max-content;
+display: block;
 }
 .scorebox{
   margin-top:15px;
@@ -41,14 +47,14 @@ body {
   text-transform: uppercase;
 }
 .Question{
-  margin-top: 240px;
+  position: relative;
+  top: 30%;
   text-align: center;
   display: block;
-  
 }
 .rgbQ{
-  font-size: 30px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-size: 25px;
+  font-family: 'Source Code Pro', monospace;
   color: white;
 }
 .boxes{
@@ -65,4 +71,38 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+.answer{
+  background: blue;
+  display: inline-block;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.answerbox{
+  vertical-align: middle;
+  margin: auto;
+  transform: translateY(230%);
+  width: 400px;
+  height: 150px;
+  font-weight: 900;
+}
+.answerbox span{
+  display: inline-block;
+  margin: auto;
+  font-size: 55px;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+.answerbox button{
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #ffffff;
+  background:transparent;
+  padding: 8px;
 }
